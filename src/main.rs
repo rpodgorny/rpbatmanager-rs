@@ -32,7 +32,7 @@ fn tick() -> Result<(), Box<dyn Error>> {
     } else {
         None
     };
-    println!("STATUS {status} {level} {thresh} {new_thresh:?}");
+    //println!("STATUS {status} {level} {thresh} {new_thresh:?}");
     if let Some(new_thresh) = new_thresh {
         if new_thresh != thresh {
             set_thresh(new_thresh)?;
