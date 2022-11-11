@@ -2,14 +2,14 @@
 pkgname=rpbatmanager-git
 provides=('rpbatmanager')
 conflicts=('rpbatmanager')
-pkgver=r2.453a28b
+pkgver=r4.75a7ab7
 pkgrel=1
 pkgdesc="Radek Podgorny's battery manager"
-arch=('any')
+arch=('x86_64')
 url="https://github.com/rpodgorny/rpbatmanager-rs"
 #license=('PSF')
 #depends=('babashka')
-makedepends=('git')
+makedepends=('git' 'cargo')
 #options=(!emptydirs)
 #backup=('etc/rpbatmanager.conf')
 source=("$pkgname::git+https://github.com/rpodgorny/rpbatmanager-rs")
