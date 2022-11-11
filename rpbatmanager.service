@@ -1,0 +1,9 @@
+[Unit]
+Description=Radek Podgorny's battery manager
+
+[Service]
+ExecStart=/usr/bin/rpbatmanager
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
