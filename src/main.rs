@@ -1,5 +1,3 @@
-const VERSION: &str = "0.0";
-
 use std::error::Error;
 
 const PREFIX: &str = "/sys/class/power_supply/BAT0";
@@ -42,7 +40,7 @@ fn tick() -> Result<(), Box<dyn Error>> {
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
-    println!("starting rpbatmanager v{VERSION}");
+    println!("starting rpbatmanager v{}", env!("CARGO_PKG_VERSION"));
     println!("PREFIX {PREFIX}");
     if std::env::args()
         .find(|x| *x == "full".to_string())
