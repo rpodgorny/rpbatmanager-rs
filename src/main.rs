@@ -23,9 +23,9 @@ where
 
 fn tick() -> Result<(), Box<dyn Error>> {
     let status = my_read_to_string(format!("{PREFIX}/status"))?;
-    let level = my_read_to_string(format!("{PREFIX}/capacity"))?.parse::<i32>()?;
     let cur_thresh = my_read_to_string(format!("{PREFIX}/charge_control_end_threshold"))?.parse::<i32>()?;
     let new_thresh = if cur_thresh == 100 || status == "Discharging" {
+        let level = my_read_to_string(format!("{PREFIX}/capacity"))?.parse::<i32>()?;
         Some(if level < MIN { MAX } else { MIN })
     } else {
         None

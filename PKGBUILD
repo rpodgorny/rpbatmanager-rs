@@ -2,7 +2,7 @@
 pkgname=rpbatmanager-git
 provides=('rpbatmanager')
 conflicts=('rpbatmanager')
-pkgver=r4.75a7ab7
+pkgver=r8.cc1be45
 pkgrel=1
 pkgdesc="Radek Podgorny's battery manager"
 arch=('x86_64')
