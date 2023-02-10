@@ -42,10 +42,7 @@ fn tick() -> Result<(), Box<dyn Error>> {
 fn main() -> Result<(), Box<dyn Error>> {
     println!("starting rpbatmanager v{}", env!("CARGO_PKG_VERSION"));
     println!("PREFIX {PREFIX}");
-    if std::env::args()
-        .find(|x| *x == "full".to_string())
-        .is_some()
-    {
+    if std::env::args().any(|x| x == "full") {
         set_thresh(99)?;
     } else {
         let dur = std::time::Duration::from_secs(SLEEP);
