@@ -45,6 +45,10 @@ fn main() -> Result<()> {
     println!("PREFIX {PREFIX}");
     if std::env::args().any(|x| x == "full") {
         set_thresh(99)?;
+    } else if let Some(x) = std::env::args().nth(1) {
+        let val = x.parse()?;
+        let val = if val == 100 { 99 } else { val };
+        set_thresh(val)?;
     } else {
         let dur = std::time::Duration::from_secs(SLEEP);
         loop {
