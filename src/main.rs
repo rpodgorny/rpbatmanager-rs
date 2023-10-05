@@ -1,4 +1,4 @@
-use anyhow::Result;
+use anyhow::{Result, anyhow};
 
 const PREFIX: &str = "/sys/class/power_supply/BAT0";
 const MIN: i32 = 60;
@@ -49,6 +49,9 @@ fn main() -> Result<()> {
         let val = x.parse()?;
         let val = if val == 100 { 99 } else { val };
         set_thresh(val)?;
+    } else if std::env::args().len() > 1 {
+        anyhow::bail!("weird arguments")
+        //return anyhow::anyhow!("weird arguments");
     } else {
         let dur = std::time::Duration::from_secs(SLEEP);
         loop {
