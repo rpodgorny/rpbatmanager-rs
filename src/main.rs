@@ -1,4 +1,4 @@
-use anyhow::{Result, anyhow};
+use anyhow::Result;
 
 const PREFIX: &str = "/sys/class/power_supply/BAT0";
 const MIN: i32 = 60;
